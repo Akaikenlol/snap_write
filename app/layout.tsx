@@ -3,6 +3,7 @@ import "./globals.css";
 import { Recursive } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
+import { dark } from "@clerk/themes";
 
 const recursive = Recursive({ subsets: ["latin"] });
 
@@ -19,8 +20,9 @@ export default function RootLayout({
 	return (
 		<ClerkProvider
 			appearance={{
+				baseTheme: dark,
 				variables: {
-					colorPrimary: "#3ded97",
+					colorPrimary: "#3371FF",
 					fontSize: "16px",
 				},
 			}}
