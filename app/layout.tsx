@@ -30,7 +30,7 @@ export default function RootLayout({
 			<html lang="en">
 				<body
 					className={cn(
-						"min-h-screen font-sans flex items-center justify-center antialiased",
+						"min-h-screen font-sans flex items-center justify-center antialiased ",
 						recursive.className
 					)}
 				>
