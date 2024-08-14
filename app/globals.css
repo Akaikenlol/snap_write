@@ -9,6 +9,9 @@
 	.header {
 		@apply min-h-[92px] min-w-full flex-nowrap flex w-full items-center justify-between gap-2 px-4;
 	}
+	.header-box-title {
+		@apply font-semibold text-gray-900;
+	}
 	.auth-page {
 		@apply flex h-screen w-full flex-col items-center justify-center gap-10;
 	}
