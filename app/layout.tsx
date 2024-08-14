@@ -4,6 +4,7 @@ import { Recursive } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 import { dark } from "@clerk/themes";
+import Header from "@/components/Header";
 
 const recursive = Recursive({ subsets: ["latin"] });
 
@@ -30,10 +31,11 @@ export default function RootLayout({
 			<html lang="en">
 				<body
 					className={cn(
-						"min-h-screen font-sans flex items-center justify-center antialiased ",
+						"min-h-screen font-sans antialiased grainy",
 						recursive.className
 					)}
 				>
+					<Header />
 					{children}
 				</body>
 			</html>
