@@ -4,7 +4,7 @@
 
 @layer utilities {
 	.home-container {
-		@apply relative flex min-h-screen w-full flex-col items-center gap-5 sm:gap-10;
+		@apply relative flex min-h-screen w-full flex-col items-center gap-5 sm:gap-10 mt-10;
 	}
 	.header {
 		@apply min-h-[92px] min-w-full flex-nowrap flex w-full items-center justify-between gap-2 px-4;
