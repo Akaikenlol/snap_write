@@ -2,14 +2,9 @@ import Link from "next/link";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Image from "next/image";
 import { SignedIn, UserButton } from "@clerk/nextjs";
-import { currentUser } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
+import { Button } from "./ui/button";
 
 const Header = async () => {
-	const clerkUser = await currentUser();
-	if (!clerkUser) {
-		redirect("/sign-in");
-	}
 	return (
 		<nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
 			<MaxWidthWrapper>
@@ -38,10 +33,17 @@ const Header = async () => {
 							Snap Write
 						</span>
 					</Link>
-					<div className="hidden items-center space-x-4 sm:flex">
-						<SignedIn>
-							<UserButton />
-						</SignedIn>
+					<div className="flex gap-6">
+						<Button className="bg-teal-500 rounded-xl text-center">
+							<Link href={"/articles"} className="text-white">
+								Create Article
+							</Link>
+						</Button>
+						<div className="hidden items-center space-x-4 sm:flex">
+							<SignedIn>
+								<UserButton />
+							</SignedIn>
+						</div>
 					</div>
 				</div>
 			</MaxWidthWrapper>

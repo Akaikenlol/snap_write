@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Recursive } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, SignedOut } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 import { dark } from "@clerk/themes";
 import Header from "@/components/Header";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const recursive = Recursive({ subsets: ["latin"] });
 
@@ -35,7 +37,6 @@ export default function RootLayout({
 						recursive.className
 					)}
 				>
-					<Header />
 					{children}
 				</body>
 			</html>
