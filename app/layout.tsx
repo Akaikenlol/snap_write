@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { Recursive } from "next/font/google";
-import { ClerkProvider, SignedOut } from "@clerk/nextjs";
-import { cn } from "@/lib/utils";
-import { dark } from "@clerk/themes";
-import Header from "@/components/Header";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
-const recursive = Recursive({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Snap Write",
-	description: "Snap Write is a blog for developers.",
+	title: "AI Startup Landing Page",
+	description: "A landing page for an AI startup created with Frontend Tribe",
 };
 
 export default function RootLayout({
@@ -21,25 +16,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<ClerkProvider
-			appearance={{
-				baseTheme: dark,
-				variables: {
-					colorPrimary: "#3371FF",
-					fontSize: "16px",
-				},
-			}}
-		>
-			<html lang="en">
-				<body
-					className={cn(
-						"min-h-screen font-sans antialiased grainy",
-						recursive.className
-					)}
-				>
-					{children}
-				</body>
-			</html>
-		</ClerkProvider>
+		<html lang="en">
+			<body className={twMerge(inter.className, "bg-black text-white")}>
+				{children}
+			</body>
+		</html>
 	);
 }
