@@ -43,3 +43,30 @@ export const LogoLink = [
 		alt: "Echo Logo",
 	},
 ];
+
+export const tabs = [
+	{
+		icon: "/assets/lottie/speed.svg",
+		title: "User-friendly dashboard",
+		isNew: false,
+		backgroundPositionX: 0,
+		backgroundPositionY: 0,
+		backgroundSizedX: 150,
+	},
+	{
+		icon: "/assets/lottie/click.svg",
+		title: "One-click optimization",
+		isNew: false,
+		backgroundPositionX: 98,
+		backgroundPositionY: 100,
+		backgroundSizedX: 135,
+	},
+	{
+		icon: "/assets/lottie/star.svg",
+		title: "Smart keyword generator",
+		isNew: true,
+		backgroundPositionX: 100,
+		backgroundPositionY: 27,
+		backgroundSizedX: 177,
+	},
+];

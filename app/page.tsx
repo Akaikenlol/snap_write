@@ -1,3 +1,4 @@
+import Features from "@/components/sections/Features";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import LogoTicker from "@/components/sections/LogoTicker";
@@ -9,6 +10,7 @@ const Home = () => {
 			<Header />
 			<Hero />
 			<LogoTicker />
+			<Features />
 		</>
 	);
 };
