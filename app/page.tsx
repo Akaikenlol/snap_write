@@ -2,6 +2,7 @@ import Features from "@/components/sections/Features";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import LogoTicker from "@/components/sections/LogoTicker";
+import Testimonials from "@/components/sections/Testimonials";
 import React from "react";
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
 			<Hero />
 			<LogoTicker />
 			<Features />
+			<Testimonials />
 		</>
 	);
 };
