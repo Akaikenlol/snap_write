@@ -97,3 +97,18 @@ export const testimonials = [
 		avatarImg: "/assets/avatar-4.png",
 	},
 ];
+
+export const footerLogo = [
+	{
+		src: "/assets/social-x.svg",
+		alt: "X Logo",
+	},
+	{
+		src: "/assets/social-instagram.svg",
+		alt: "Instagram Logo",
+	},
+	{
+		src: "/assets/social-youtube.svg",
+		alt: "Youtube Logo",
+	},
+];
