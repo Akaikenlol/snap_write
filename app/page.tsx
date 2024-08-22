@@ -1,5 +1,6 @@
 import CallToAction from "@/components/sections/CallToAction";
 import Features from "@/components/sections/Features";
+import Footer from "@/components/sections/Footer";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import LogoTicker from "@/components/sections/LogoTicker";
@@ -15,6 +16,7 @@ const Home = () => {
 			<Features />
 			<Testimonials />
 			<CallToAction />
+			<Footer />
 		</>
 	);
 };
