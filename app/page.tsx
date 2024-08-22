@@ -1,3 +1,4 @@
+import CallToAction from "@/components/sections/CallToAction";
 import Features from "@/components/sections/Features";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
@@ -13,6 +14,7 @@ const Home = () => {
 			<LogoTicker />
 			<Features />
 			<Testimonials />
+			<CallToAction />
 		</>
 	);
 };
