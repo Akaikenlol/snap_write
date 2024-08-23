@@ -1,6 +1,42 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import { tabs } from "@/constants";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const FeatureTab = (tab: (typeof tabs)[number]) => {
+	const dotLottieRef = useRef(null);
+	return (
+		<div className="border border-white/25 bg-black glass-container flex p-2.5 rounded-xl gap-2.5 items-center text-center lg:flex-1 relative">
+			<div className="absolute inset-0 -m-px rounded-xl border border-[#A369FF] [mask-image:radial-gradient(80px_80px_at_0%_0%,black,transparent)]" />
+			<motion.div
+				whileHover={{
+					scale: 1.05,
+					boxShadow: "0px 0px 8px rgba(255, 255, 255, 0.5)",
+				}}
+				whileTap={{ scale: 0.9 }}
+				transition={{ type: "spring", stiffness: 300 }}
+				className="h-12 w-12 border border-white/30 bg-black rounded-xl inline-flex items-center justify-center"
+			>
+				<Image
+					ref={dotLottieRef}
+					src={tab.icon}
+					alt={tab.title}
+					width={24}
+					height={24}
+					className="cursor-pointer invert"
+				/>
+			</motion.div>
+			<div className="font-medium">{tab.title}</div>
+			{tab.isNew && (
+				<div className="text-sm rounded-xl px-2 py-0.5 bg-[#8c44ff] text-black font-semibold">
+					New
+				</div>
+			)}
+		</div>
+	);
+};
 
 const Features = () => {
 	return (
@@ -15,26 +51,7 @@ const Features = () => {
 				</p>
 				<div className="mt-10 flex flex-col lg:flex-row gap-7">
 					{tabs.map((tab, index) => (
-						<div
-							key={index}
-							className="border border-white/25 bg-black glass-container flex p-2.5 rounded-xl gap-2.5 items-center text-center lg:flex-1"
-						>
-							<div className="h-12 w-12 border border-white/30 bg-black rounded-xl inline-flex items-center justify-center">
-								<Image
-									src={tab.icon}
-									alt={tab.title}
-									width={24}
-									height={24}
-									className="cursor-pointer invert"
-								/>
-							</div>
-							<div className="font-medium">{tab.title}</div>
-							{tab.isNew && (
-								<div className="text-sm rounded-xl px-2 py-0.5 bg-[#8c44ff] text-black font-semibold">
-									New
-								</div>
-							)}
-						</div>
+						<FeatureTab key={index} {...tab} />
 					))}
 				</div>
 				<div className="border border-white/15 rounded-xl mt-7 glass-container">
