@@ -1,4 +1,7 @@
+"use client";
+
 import { LogoLink } from "@/constants";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 
@@ -11,7 +14,16 @@ const LogoTicker = () => {
 						<h2>Trusted by a top innovative teams</h2>
 					</div>
 					<div className="flx-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-						<div className="flex flex-none gap-14">
+						<motion.div
+							initial={{ translateX: "-100%" }}
+							animate={{ translateX: "25%" }}
+							transition={{
+								repeat: Infinity,
+								duration: 30,
+								ease: "linear",
+							}}
+							className="flex flex-none gap-14 pr-14 -translate-x-1/4"
+						>
 							{LogoLink.map((logo, index) => (
 								<Image
 									key={index}
@@ -22,7 +34,7 @@ const LogoTicker = () => {
 									className="h-6 w-auto"
 								/>
 							))}
-						</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>
