@@ -24,7 +24,7 @@ const LogoTicker = () => {
 							}}
 							className="flex flex-none gap-14 pr-14 -translate-x-1/4"
 						>
-							{LogoLink.map((logo, index) => (
+							{[...LogoLink, ...LogoLink].map((logo, index) => (
 								<Image
 									key={index}
 									src={logo.src}
